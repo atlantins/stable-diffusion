@@ -8,6 +8,9 @@
           <mappings>
             <mapping deploy="/stable-diffusion" local="$PROJECT_DIR$" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/stable-diffusion/models/ldm/stable-diffusion-v1" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
