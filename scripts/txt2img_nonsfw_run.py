@@ -101,7 +101,7 @@ def main():
         "--prompt",
         type=str,
         nargs="?",
-        default="Byousoku 5 Centimeter风格的街道，阳光照耀在街道上",
+        default="Byousoku 5 centimeter style street, the sun shines on the street",
         help="the prompt to render"
     )
     parser.add_argument(
@@ -124,7 +124,7 @@ def main():
     parser.add_argument(
         "--ddim_steps",
         type=int,
-        default=200,
+        default=100,
         help="number of ddim sampling steps",
     )
     parser.add_argument(
@@ -181,7 +181,7 @@ def main():
     parser.add_argument(
         "--n_samples",
         type=int,
-        default=10,
+        default=6,
         help="how many samples to produce for each given prompt. A.k.a. batch size",
     )
     parser.add_argument(
