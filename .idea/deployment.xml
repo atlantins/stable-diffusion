@@ -6,11 +6,8 @@
       <paths name="xhj@222.28.77.116:22 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/stable-diffusion" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath path="/stable-diffusion/models/ldm/stable-diffusion-v1" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
