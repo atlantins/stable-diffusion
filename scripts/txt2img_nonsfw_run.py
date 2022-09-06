@@ -110,25 +110,28 @@ def main():
         W = 512
         C = 4
         f = 8
-        n_samples = 6
+        n_samples = 1
         n_rows = 0
         scale = 7.5
         config = "configs/stable-diffusion/v1-inference.yaml"
-        ckpt = "models/ldm/stable-diffusion-v1/model.ckpt"
+        ckpt = '/home/xhj/stable-diffusion/models/ldm/stable-diffusion-v1/sd-v1-4-full-ema.ckpt'
         seed = 42
         precision = autocast
+        from_file = None
 
-    if opt.laion400m:
-        print("Falling back to LAION 400M model...")
-        opt.config = "configs/latent-diffusion/txt2img-1p4B-eval.yaml"
-        opt.ckpt = "models/ldm/text2img-large/model.ckpt"
-        opt.outdir = "outputs/txt2img-samples-laion400m"
+    # if opt.laion400m:
+    #     print("Falling back to LAION 400M model...")
+    #     # opt.config = "configs/latent-diffusion/txt2img-1p4B-eval.yaml"
+    #     # opt.ckpt = "models/ldm/text2img-large/model.ckpt"
+    #     # opt.outdir = "outputs/txt2img-samples-laion400m"
 
     seed_everything(opt.seed)
 
+    print(opt.config)
     config = OmegaConf.load(f"{opt.config}")
     model = load_model_from_config(config, f"{opt.ckpt}")
 
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = model.to(device)
 

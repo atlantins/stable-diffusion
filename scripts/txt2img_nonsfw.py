@@ -227,7 +227,7 @@ def main():
         default="autocast"
     )
     opt = parser.parse_args()
-
+    print(opt)
     if opt.laion400m:
         print("Falling back to LAION 400M model...")
         opt.config = "configs/latent-diffusion/txt2img-1p4B-eval.yaml"
